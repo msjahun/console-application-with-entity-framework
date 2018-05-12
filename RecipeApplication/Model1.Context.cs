@@ -13,10 +13,10 @@ namespace RecipeApplication
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class testDbEntities : DbContext
+    public partial class RecipeEntities : DbContext
     {
-        public testDbEntities()
-            : base("name=testDbEntities")
+        public RecipeEntities()
+            : base("name=RecipeEntities")
         {
         }
     
@@ -25,6 +25,7 @@ namespace RecipeApplication
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Recipe> Recipes { get; set; }
     }
 }
